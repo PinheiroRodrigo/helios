@@ -22,7 +22,7 @@ defmodule Helios.WeatherPolling do
 
   defp schedule_polling(), do: Process.send_after(self(), :work, @timeout)
 
-  def update_weather_info() do
+  defp update_weather_info() do
     Repo.all(from c in City, join: w in assoc(c, :weather_info), preload: [weather_info: w])
     |> Enum.each(fn city ->
       weather_changes = Helios.request_weather(city.name, city.country_code)
