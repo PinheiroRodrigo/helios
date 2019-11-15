@@ -11,7 +11,8 @@ defmodule Helios.Application do
       # Start the Ecto repository
       Helios.Repo,
       # Start the endpoint when the application starts
-      HeliosWeb.Endpoint
+      HeliosWeb.Endpoint,
+      {Helios.WeatherPolling, []}
       # Starts a worker by calling: Helios.Worker.start_link(arg)
       # {Helios.Worker, arg},
     ]
