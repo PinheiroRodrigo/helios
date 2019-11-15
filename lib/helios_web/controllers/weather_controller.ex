@@ -4,7 +4,6 @@ defmodule Helios.WeatherController do
   alias Helios.{City, Repo}
 
   def track_weather_of_city(city, country_code) do
-    # TODO: check if city is already tracked / maybe check if it needs an update
     with weather when is_map(weather) <- Helios.request_weather(city, country_code),
          %City{} = city <- insert_weather_report(weather)
     do
