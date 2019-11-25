@@ -11,7 +11,7 @@ config :helios, Helios.Repo,
 
 config :helios,
   # this key is in app environment just for the sake of making the example easier to use
-  weather_key: "155da84a5e27cba94f28bea5dd24ef9c"
+  weather_key: "get your key on openweathermap.org"
 
 
 # For development, we disable any cache and enable
